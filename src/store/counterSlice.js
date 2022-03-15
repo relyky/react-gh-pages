@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+﻿import { createSlice } from '@reduxjs/toolkit';
+import { blockUI, unblockUI } from './appInfoSlice'
 
 export const counterSlice = createSlice({
   name: 'counter',
@@ -29,9 +30,11 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
 export const incrementAsync = amount => dispatch => {
+  dispatch(blockUI());
   setTimeout(() => {
     dispatch(incrementByAmount(amount));
-  }, 1000);
+    dispatch(unblockUI());
+  }, 2000);
 };
 
 // The function below is called a selector and allows us to select a value from
