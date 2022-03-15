@@ -1,5 +1,5 @@
-# react-gh-pages Lab
+ï»¿# react-gh-pages Lab
 
-## «ü¥O
+## æŒ‡ä»¤
 `npm run start` ------ dev & debug
 `npm run deploy` ------ deploy to GitHub page
