@@ -1,6 +1,11 @@
+import React from 'react'
+import { Button } from '@mui/material'
+import LoopIcon from '@mui/icons-material/Loop'
+import PendingIcon from '@mui/icons-material/Pending'
+
 import logo from './logo.svg'
 import './Home.css'
-// redux, action
+// redux & actions
 import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement, incrementAsync } from './store/counterSlice'
 
@@ -13,18 +18,22 @@ export default function Home() {
     <div className="App">
       <header className="App-header">
 
-        <pre>f_blocking: {f_blocking ? 'TRUE' : 'FALSE'}</pre>
+        {f_blocking ? <LoopIcon fontSize="large" /> : <PendingIcon fontSize="large" />}
+        
         <div className='block'>
-          <button onClick={() => dispatch(increment())}>
+          <Button variant="contained" color="primary" sx={{ mx: 1 }}
+            onClick={() => dispatch(increment())}>
             Increment
-          </button>
+          </Button>
           <span>{count}</span>
-          <button onClick={() => dispatch(decrement())}>
+          <Button variant="contained" color="secondary" sx={{ mx: 1 }}
+            onClick={() => dispatch(decrement())}>
             Decrement
-          </button>
-          <button onClick={() => dispatch(incrementAsync(3))}>
+          </Button>
+          <Button variant="outlined" color="warning" sx={{ mx: 1 }}
+            onClick={() => dispatch(incrementAsync(3))}>
             incrementAsync
-          </button>
+          </Button>
         </div>
 
         <img src={logo} className="App-logo" alt="logo" />

@@ -4,11 +4,13 @@ import { BrowserRouter } from "react-router-dom"
 import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals'
 import store from './store/store'
+import CssBaseline from '@mui/material/CssBaseline'
 import App from './App'
 import './index.css'
 
 render(
   <React.StrictMode>
+    <CssBaseline />
     <Provider store={store}>
       <BrowserRouter>
         <App />
