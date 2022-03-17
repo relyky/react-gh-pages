@@ -1,7 +1,9 @@
 import React from 'react'
-import { Button } from '@mui/material'
-import LoopIcon from '@mui/icons-material/Loop'
-import PendingIcon from '@mui/icons-material/Pending'
+import { Typography, Button, CircularProgress } from '@mui/material'
+import {
+  Add as AddIcon,
+  Remove as RemoveIcon
+} from '@mui/icons-material'
 
 import logo from './logo.svg'
 import './Home.css'
@@ -18,19 +20,20 @@ export default function Home() {
     <div className="App">
       <header className="App-header">
 
-        {f_blocking ? <LoopIcon fontSize="large" /> : <PendingIcon fontSize="large" />}
-        
         <div className='block'>
-          <Button variant="contained" color="primary" sx={{ mx: 1 }}
+          <Button variant="contained" color="primary" startIcon={<AddIcon />} sx={{ mx: 1 }}
             onClick={() => dispatch(increment())}>
             Increment
           </Button>
-          <span>{count}</span>
-          <Button variant="contained" color="secondary" sx={{ mx: 1 }}
+          <Typography variant="h2" component="span" sx={{ mx: 1 }}>
+            {count}
+          </Typography>
+          <Button variant="contained" color="secondary" startIcon={<RemoveIcon />} sx={{ mx: 1 }}
             onClick={() => dispatch(decrement())}>
             Decrement
           </Button>
           <Button variant="outlined" color="warning" sx={{ mx: 1 }}
+            endIcon={f_blocking && <CircularProgress size="1rem" color="secondary" />}
             onClick={() => dispatch(incrementAsync(3))}>
             incrementAsync
           </Button>
@@ -38,7 +41,7 @@ export default function Home() {
 
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          練習 <code>React.v17</code> + <code>Redux</code> + <code>Material UI.v5</code>
         </p>
         <a
           className="App-link"
