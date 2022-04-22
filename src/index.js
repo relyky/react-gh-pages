@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals'
 import store from './store/store'
 import CssBaseline from '@mui/material/CssBaseline'
+import StyledEngineProvider from '@mui/material/StyledEngineProvider'
 import App from './App'
 import './index.css'
 
@@ -12,9 +13,11 @@ render(
   <React.StrictMode>
     <CssBaseline />
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <StyledEngineProvider injectFirst>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </StyledEngineProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

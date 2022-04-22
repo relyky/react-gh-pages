@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import ReactFlow from 'react-flow-renderer';
+import { useState } from 'react'
+import ReactFlow from 'react-flow-renderer'
+import styles from './Flow.module.css'
 
 const initialNodes = [
   {
@@ -33,7 +34,7 @@ export default function Flow() {
   const [edges, setEdges] = useState(initialEdges);
 
   return (
-  <div style={{height:600, backgroundColor:'grey'}}>
+  <div className={styles.flowbox}>
     <ReactFlow nodes={nodes} edges={edges} fitView />
   </div>);
 }

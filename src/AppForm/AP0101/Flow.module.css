@@ -1,5 +1,5 @@
 .flowbox {
-    border: solid thin black;
-    background-color: cyan;
+    border: solid thin darkgray;
+    background-color: lightgray;
     height: 600px;
 }
