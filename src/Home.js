@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Button, CircularProgress } from '@mui/material'
+import { Typography, Button, CircularProgress, Stack } from '@mui/material'
 import {
   Add as AddIcon,
   Remove as RemoveIcon
@@ -20,24 +20,24 @@ export default function Home() {
     <div className="App">
       <header className="App-header">
 
-        <div className='block'>
-          <Button variant="contained" color="primary" startIcon={<AddIcon />} sx={{ mx: 1 }}
+        <Stack direction="row" alignItems="baseline" spacing={2}>
+          <Button variant="contained" color="primary" startIcon={<AddIcon />}
             onClick={() => dispatch(increment())}>
             Increment
           </Button>
-          <Typography variant="h2" component="span" sx={{ mx: 1 }}>
+          <Typography variant="h2" component="span">
             {count}
           </Typography>
-          <Button variant="contained" color="secondary" startIcon={<RemoveIcon />} sx={{ mx: 1 }}
+          <Button variant="contained" color="secondary" startIcon={<RemoveIcon />}
             onClick={() => dispatch(decrement())}>
             Decrement
           </Button>
-          <Button variant="outlined" color="warning" sx={{ mx: 1 }}
-            endIcon={f_blocking && <CircularProgress size="1rem" color="secondary" />}
+          <Button variant="outlined" color="warning"
+            startIcon={f_blocking ? <CircularProgress size="1em" color="secondary" /> : <AddIcon />}
             onClick={() => dispatch(incrementAsync(3))}>
             incrementAsync
           </Button>
-        </div>
+        </Stack>
 
         <img src={logo} className="App-logo" alt="logo" />
         <p>

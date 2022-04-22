@@ -1,4 +1,4 @@
-﻿# react-gh-pages Lab
+# react-gh-pages Lab
 
 ## 指令
 `npm run start` ------ dev & debug
