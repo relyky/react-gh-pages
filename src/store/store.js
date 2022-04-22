@@ -1,13 +1,13 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
-import appInfoReducer from './appInfoSlice'
-import counterReducer from './counterSlice'
-import ap0101Reducer from '../AppForm/AP0101/appSlice'
+import appInfo from './appInfoSlice'
+import counter from './counterSlice'
+import ap0102 from 'AppForm/AP0102/appSlice'
 
 export default configureStore({
   reducer: {
-    appInfo: appInfoReducer,
-    counter: counterReducer,
-    ap0101: ap0101Reducer,
+    appInfo,
+    counter,
+    ap0102,
   },
   devTools: process.env.NODE_ENV !== 'production'
 });

@@ -6,7 +6,8 @@ import {
 } from '@mui/icons-material'
 
 import logo from './logo.svg'
-import './Home.css'
+import styles from './Home.module.css'
+
 // redux & actions
 import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement, incrementAsync } from './store/counterSlice'
@@ -17,8 +18,8 @@ export default function Home() {
   const dispatch = useDispatch()
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={styles.app}>
+      <header className={styles.app_header}>
 
         <Stack direction="row" alignItems="baseline" spacing={2}>
           <Button variant="contained" color="primary" startIcon={<AddIcon />}
@@ -39,12 +40,12 @@ export default function Home() {
           </Button>
         </Stack>
 
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className={styles.app_logo} alt="logo" />
         <p>
           練習 <code>React.v17</code> + <code>Redux</code> + <code>Material UI.v5</code>
         </p>
         <a
-          className="App-link"
+          className={styles.app_link}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
